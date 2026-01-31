@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.N.L.K. Mahitha Kusumanchi - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Updated to "Sunset Hues" Palette */
+            --bg-main: #EAE0CC;        /* Soft Cream Background */
+            --brand-primary: #546A76;  /* Deep Slate/Teal */
+            --brand-secondary: #7D8F82;/* Muted Sage Green */
+            --brand-accent: #C1A39F;   /* Dusty Rose */
+            --text-dark: #2D3A3A;      /* Charcoal for readability */
+            --text-muted: #5F6368;
+            --white-glass: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Commissioner', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Modern Gradient Background Elements */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .bg-circle-1 {
+            width: 600px;
+            height: 600px;
+            top: -100px;
+            right: -100px;
+            background: var(--brand-accent);
+            opacity: 0.15;
+        }
+
+        .bg-circle-2 {
+            width: 500px;
+            height: 500px;
+            bottom: -100px;
+            left: -100px;
+            background: var(--brand-secondary);
+            opacity: 0.15;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        header {
+            padding: 100px 0 60px;
+            text-align: center;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            letter-spacing: -1.5px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--brand-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: var(--white-glass);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            color: var(--brand-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Section Styling */
+        section {
+            margin: 80px 0;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        /* 1. Change text-align to left and remove auto margins from the title itself */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--brand-primary);
+            margin-bottom: 40px;
+            text-align: left; /* Changed from center to left */
+        }
+
+        /* 2. Update the underline to start from the left instead of the center */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--brand-accent);
+            margin: 15px 0 0; /* Changed 'margin: 15px auto 0' to 'margin: 15px 0 0' */
+        }
+
+        /* Clean Card Design */
+        .card {
+            background: var(--white-glass);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Technical Skills */
+        .skill-tag {
+            background: white;
+            color: var(--brand-primary);
+            border: 1px solid rgba(84, 106, 118, 0.1);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        /* Projects */
+        .project-title {
+            color: var(--brand-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+        }
+
+        .project-tech {
+            color: var(--brand-accent);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* GitHub Stats */
+        .stat-box {
+            background: var(--brand-primary);
+            color: #EAE0CC; /* Cream text on dark background */
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--brand-primary);
+            color: var(--bg-main);
+            border: none;
+            padding: 16px 45px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            background: var(--text-dark);
+            box-shadow: 0 15px 30px rgba(45, 58, 58, 0.2);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--brand-primary);
+            color: var(--brand-primary);
+            background: transparent;
+        }
+
+        footer {
+            background: rgba(45, 58, 58, 0.05);
+            padding: 60px 0;
+            border-top: none;
+        }
+
+        /* (Keep existing animations and media queries from your original code) */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .name { font-size: 2.8rem; } .container { padding: 0 20px; } }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="name">P.N.L.K. Mahitha Kusumanchi</h1>
+            <p class="tagline">CSE Student • Full-Stack Developer • ML Enthusiast</p>
+            
+            <div class="contact-bar">
+                <a href="mailto:example@domain.com" class="contact-item"><span>✉</span> Email</a>
+                <a href="tel:+918688662198" class="contact-item"><span>📞</span> Contact</a>
+                <a href="#" class="contact-item"><span>💼</span> LinkedIn</a>
+                <a href="#" class="contact-item"><span>💻</span> GitHub</a>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="card">
+                <p class="summary-text">
+                    A dedicated and enthusiastic Computer Science student at Amrita Vishwa Vidyapeetham with a strong foundation in software development and machine learning. With a CGPA of 8.25/10.00, I have developed expertise in full-stack development, mobile applications, and embedded systems. My passion lies in creating innovative solutions that bridge the gap between technology and real-world problems.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-buttons">
+                <a href="mailto:example@domain.com" class="btn btn-primary">Send Email</a>
+                <a href="#" class="btn btn-secondary">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 P.N.L.K. Mahitha Kusumanchi</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Designed for Innovation | Built with Passion</p>
+        </footer>
+    </div>
+</body>
+</html>
