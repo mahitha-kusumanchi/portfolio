@@ -142,6 +142,22 @@
             box-shadow: 0 6px 20px rgba(201, 173, 167, 0.3);
             border-color: var(--accent-mauve);
         }
+        .contact-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .copy-icon {
+            cursor: pointer;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .copy-icon:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
 
         /* Section Styling */
         section {
@@ -580,10 +596,33 @@
             border: 2px solid #22223B;
             background-clip: padding-box;
         }
-        
+        .project-title a {
+            color: var(--accent-cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-title a:hover {
+            color: var(--accent-mauve);
+            text-decoration: underline;
+        }
+        .project-link a {
+            color: #C9ADA7;          /* highlight color */
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .project-link a:hover {
+            color: #F2E9E4;          /* lighter on hover */
+            text-decoration: underline;
+        }
+
+
+
     </style>
 </head>
 <body>
+    
     <!-- Background Decoration -->
     <div class="bg-decoration">
         <div class="bg-circle bg-circle-1"></div>
@@ -598,12 +637,22 @@
             <p class="tagline">Computer Science Engineering Student | Full-Stack Developer | ML Enthusiast</p>
             
             <div class="contact-bar">
-                <a href="/cdn-cgi/l/email-protection#08656960617c6069637d7b7d6569666b6061383a3c30486f65696164266b6765" class="contact-item">
-                    <span>✉</span> <span class="__cf_email__" data-cfemail="97faf6fffee3fff6fce2e4e2faf6f9f4fffea7a5a3afd7f0faf6fefbb9f4f8fa">[email&#160;protected]</span>
-                </a>
-                <a href="tel:+918688662198" class="contact-item">
-                    <span>📞</span> +91-8688662198
-                </a>
+                <div class="contact-item">
+                    <a href="mailto:mahithakusumanchi0248@gmail.com" class="contact-link">
+                        ✉ mahithakusumanchi0248@gmail.com
+                    </a>
+                    </div>
+
+                    <div class="contact-item">
+                    <a href="tel:+918688662198" class="contact-link">
+                        📞 +91 8688662198
+                    </a>
+                    </div>
+
+                    <!-- Hidden text holders -->
+                    <span id="email" hidden>mahithakusumanchi0248@gmail.com</span>
+                    <span id="phone" hidden>+918688662198</span>
+
                 <a href="https://linkedin.com/in/p-n-l-k-mahitha-kusumanchi-b67374307" target="_blank" class="contact-item">
                     <span>💼</span> LinkedIn
                 </a>
@@ -618,7 +667,7 @@
             <h2 class="section-title">Professional Summary</h2>
             <div class="card">
                 <p class="summary-text">
-                    A dedicated and enthusiastic Computer Science student at Amrita Vishwa Vidyapeetham with a strong foundation in software development and machine learning. With a CGPA of 8.25/10.00, I have developed expertise in full-stack development, mobile applications, and embedded systems. My passion lies in creating innovative solutions that bridge the gap between technology and real-world problems. I am actively seeking opportunities to contribute to challenging projects that encourage continuous learning, skill development, and technological innovation.
+                    A dedicated and enthusiastic Computer Science student at Amrita Vishwa Vidyapeetham with a strong foundation in software development and machine learning. With a CGPA of 8.25/10.00, I have developed expertise in mobile applications, and embedded systems. My passion lies in creating innovative solutions that bridge the gap between technology and real-world problems. I am actively seeking opportunities to contribute to challenging projects that encourage continuous learning, skill development, and technological innovation.
                 </p>
             </div>
         </section>
@@ -634,9 +683,9 @@
                             <span class="skill-tag">C</span>
                             <span class="skill-tag">C++</span>
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Java</span>
                             <span class="skill-tag">SQL</span>
                             <span class="skill-tag">Haskell</span>
+                            <span class="skill-tag">Java</span>
                         </div>
                     </div>
                     
@@ -683,7 +732,6 @@
                         <div class="skill-tags">
                             <span class="skill-tag">STM32</span>
                             <span class="skill-tag">Embedded C</span>
-                            <span class="skill-tag">IoT</span>
                         </div>
                     </div>
                 </div>
@@ -693,17 +741,8 @@
         <!-- Key Projects -->
         <section>
             <h2 class="section-title">Key Projects</h2>
-            
-            <div class="card project-item">
-                <div class="project-header">
-                    <h3 class="project-title">Supply Chain Management System</h3>
-                    <span class="project-tech">Python • Data Structures • Algorithms</span>
-                </div>
-                <p class="project-description">
-                    Designed and implemented a comprehensive supply chain management system to track stock levels, predict demand using historical data analysis, prevent overstocking or shortages through intelligent forecasting, optimize supplier networks and delivery schedules using graph-based priority handling algorithms, and dynamically update inventory records to improve operational efficiency, reduce waste, and enhance decision-making capabilities.
-                </p>
-            </div>
 
+            <!-- Movie Vault -->
             <div class="card project-item">
                 <div class="project-header">
                     <h3 class="project-title">Movie Vault</h3>
@@ -712,8 +751,32 @@
                 <p class="project-description">
                     Developed Movie Vault, a full-featured OTT-style Flutter web application that enables users to browse an extensive catalog of movies and series with detailed metadata, stream trailers and episodes seamlessly using the YouTube IFrame Player, manage continue-watching lists and trending content dynamically, and leverage Firebase Firestore for robust movie data storage and retrieval, with deployment on Vercel for scalable and reliable web hosting.
                 </p>
+                <p class="project-link">
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/mahitha-kusumanchi/movie-vault" target="_blank">
+                        https://github.com/mahitha-kusumanchi/movie-vault
+                    </a>
+                </p>
             </div>
 
+            <!-- Secure Whistleblower Reporting System -->
+            <div class="card project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Secure Whistleblower Reporting System</h3>
+                    <span class="project-tech">MERN Stack • JWT • OTP Authentication • RBAC</span>
+                </div>
+                <p class="project-description">
+                    Designed and developed a secure whistleblower reporting system enabling anonymous incident submission with OTP-based authentication, JWT authorization, and role-based access control, ensuring user privacy, secure data handling, controlled report visibility for administrators and investigators, and reliable backend API protection to support safe and confidential reporting.
+                </p>
+                <p class="project-link">
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/mahitha-kusumanchi/whistleblower-system" target="_blank">
+                       https://github.com/mahitha-kusumanchi/whistleblower-system
+                    </a>
+                </p>
+            </div>
+
+            <!-- Smart Energy Meter -->
             <div class="card project-item">
                 <div class="project-header">
                     <h3 class="project-title">Smart Energy Meter</h3>
@@ -722,8 +785,32 @@
                 <p class="project-description">
                     Engineered a Smart Energy Meter using the STM32F401CCU6 microcontroller to measure real-time AC voltage and current through ZMPT101B and ACS712 sensors, compute instantaneous power consumption (P = V × I), track cumulative energy usage over time, and display real-time readings on a 16×2 LCD display, with future scope for data logging capabilities and IoT-based remote monitoring and analytics.
                 </p>
+                <p class="project-link">
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/mahitha-kusumanchi/Smart-Energy" target="_blank">
+                       https://github.com/mahitha-kusumanchi/Smart-Energy
+                    </a>
+                </p>
+            </div>
+
+            <!-- Supply Chain Management System -->
+            <div class="card project-item">
+                <div class="project-header">
+                    <h3 class="project-title">Supply Chain Management System</h3>
+                    <span class="project-tech">Python • Data Structures • Algorithms</span>
+                </div>
+                <p class="project-description">
+                    Designed and implemented a comprehensive supply chain management system to track stock levels, predict demand using historical data analysis, prevent overstocking or shortages through intelligent forecasting, optimize supplier networks and delivery schedules using graph-based priority handling algorithms, and dynamically update inventory records to improve operational efficiency, reduce waste, and enhance decision-making capabilities.
+                </p>
+                <p class="project-link">
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/deepthakp/dsa" target="_blank">
+                        https://github.com/deepthakp/dsa
+                    </a>
+                </p>
             </div>
         </section>
+  
 
         <!-- GitHub Highlights -->
         <section>
@@ -735,7 +822,7 @@
                         <div class="stat-label">LeetCode Problems</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-number">3+</div>
+                        <div class="stat-number">4+</div>
                         <div class="stat-label">Major Projects</div>
                     </div>
                     <div class="stat-box">
@@ -784,24 +871,15 @@
 
         <!-- Internships / Research Work -->
         <section>
-            <h2 class="section-title">Internships & Research Work</h2>
+            <h2 class="section-title">Academic & Project Experience</h2>
             <div class="card">
                 <div class="project-item">
                     <div class="project-header">
-                        <h3 class="project-title">Software Development Intern</h3>
-                        <span class="project-tech">TechCorp Solutions • Summer 2025</span>
+                        <h3 class="project-title">Self-Driven Learning & Technical Projects</h3>
+                        <span class="project-tech">B.Tech Computer Science • 2023 – Present</span>
                     </div>
                     <p class="project-description">
-                        Worked on developing scalable web applications using React and Node.js. Collaborated with cross-functional teams to implement new features and optimize existing codebase, resulting in 30% improvement in application performance.
-                    </p>
-                </div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3 class="project-title">Machine Learning Research Assistant</h3>
-                        <span class="project-tech">Amrita Research Lab • Jan 2025 - Present</span>
-                    </div>
-                    <p class="project-description">
-                        Contributing to research on predictive analytics and data-driven decision making. Implementing machine learning models for pattern recognition and assisting in the preparation of research papers for publication.
+                        Built strong practical foundations through academic coursework, self-initiated projects, and technical exploration in software development, machine learning, and embedded systems. Focused on applying theoretical concepts to real-world problem statements, improving problem-solving skills, and preparing for industry-level challenges through consistent hands-on practice.
                     </p>
                 </div>
             </div>
@@ -809,17 +887,17 @@
 
         <!-- Certifications -->
         <section>
-            <h2 class="section-title">Certifications</h2>
+            <h2 class="section-title">Learning & Skill Development</h2>
             <div class="card">
                 <ul class="styled-list">
-                    <li><strong>Full-Stack Web Development</strong> — Coursera (2024)</li>
-                    <li><strong>Machine Learning Specialization</strong> — DeepLearning.AI (2024)</li>
-                    <li><strong>Flutter & Dart - Complete Development Bootcamp</strong> — Udemy (2024)</li>
-                    <li><strong>Data Structures and Algorithms</strong> — GeeksforGeeks (2023)</li>
-                    <li><strong>Python for Data Science</strong> — IBM (2023)</li>
+                    <li><strong>Structured Academic Coursework</strong> — Core subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Machine Learning.</li>
+                    <li><strong>Self-Guided Learning</strong> — Actively learning full-stack development, machine learning fundamentals, and modern software tools through online resources and documentation.</li>
+                    <li><strong>Hands-On Practice</strong> — Applied concepts through academic projects, mini-projects, and problem-solving on coding platforms.</li>
+                    <li><strong>Continuous Skill Building</strong> — Regularly improving programming proficiency, system design understanding, and practical implementation skills.</li>
                 </ul>
             </div>
         </section>
+
 
         <!-- Achievements & Activities -->
         <section>
@@ -873,16 +951,7 @@
             <div class="card">
                 <div class="interest-grid">
                     <div class="interest-item">
-                        <strong>🧠 Advanced Deep Learning</strong>
-                    </div>
-                    <div class="interest-item">
-                        <strong>☁️ Cloud Computing (AWS/Azure)</strong>
-                    </div>
-                    <div class="interest-item">
-                        <strong>🔗 Blockchain Technology</strong>
-                    </div>
-                    <div class="interest-item">
-                        <strong>📊 Advanced Data Analytics</strong>
+                        <strong>🧠 Deep Learning</strong>
                     </div>
                     <div class="interest-item">
                         <strong>🤖 Generative AI & LLMs</strong>
@@ -941,4 +1010,11 @@
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
-            })})
+            })
+        })
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+            alert("Copied to clipboard!");
+            });
+        }
